@@ -1,0 +1,133 @@
+.portfolio {    
+    position: relative;
+    overflow: hidden;
+    perspective-origin: center;
+    height: max-content;
+    // perspective: 1800px;
+
+    &__item {
+        margin-bottom: 30px;
+        &-wrap {
+            overflow: hidden;
+            display: block;
+        }
+        & img {
+            width: 100%;
+            display: block;
+            transition: all .3s;
+            &:hover {
+                transform: scale(1.1);
+            }          
+        }
+    }
+    .animation {
+        position: absolute;
+        z-index: 9;
+        width: 28%;
+        transform-origin: 0px 0 0px;
+        animation-name: fall, sway;
+        animation-duration: 25s, 25s;
+        animation-fill-mode: both;
+        animation-timing-function: linear, ease-in-out;
+        animation-iteration-count: infinite;
+    }
+    .leaf-1 { top: -60px;}
+    .leaf-2 { top: -45px; left: 5%; animation-delay: 8s; transform: rotateX(58deg); }
+    .leaf-3 { width: 28%; top: -30px; left: 15%; animation-delay: 15s; }
+    .leaf-4 { width: 25%; top: -55px; left: 90%; animation-delay: 4.4s; }
+    .leaf-5 { width: 28%; top: -18px; left: 85%; animation-delay: 13s; }
+    .leaf-6 { width: 23%; top: 0px; left: 95%; animation-delay: 20s; }
+}
+@keyframes sway { 
+    0% {
+        transform: rotateZ(-15deg) rotateX(55deg);
+    }
+    5% {
+        transform: rotateZ(20deg) rotateX(60deg);
+        animation-timing-function: ease-in-out;
+    }
+    10% {
+        transform: rotateZ(-20deg) rotateX(-55deg);
+        animation-timing-function: ease-in-out;
+    }
+    15% {
+        transform: rotateZ(0deg) rotateX(-60deg);
+        animation-timing-function: ease-in-out;
+    }
+    20% {
+        transform: rotateZ(20deg) rotateX(50deg);
+        animation-timing-function: ease-in-out;
+    }
+    25% {
+        transform: rotateZ(20deg) rotateX(-45deg);
+        animation-timing-function: ease-in-out;
+    }
+    
+    30% {
+        transform: rotateZ(20deg) rotateX(60deg);
+        animation-timing-function: ease-in-out;
+    }
+    35% {
+        transform: rotateZ(20deg) rotateX(-65deg);
+        animation-timing-function: ease-in-out;
+    }
+    40% {
+        transform: rotateZ(20deg) rotateX(70deg);
+        animation-timing-function: ease-in-out;
+    }
+    45% {
+        transform: rotateZ(20deg) rotateX(-55deg);
+        animation-timing-function: ease-in-out;
+    }
+    50% {
+        transform: rotateZ(20deg) rotateX(58deg);
+        animation-timing-function: ease-in-out;
+    }
+    55% {
+        transform: rotateZ(20deg) rotateX(93deg);
+        animation-timing-function: ease-in-out;
+    }
+    
+    60% {
+        transform: rotateZ(-20deg) rotateX(0deg);
+        animation-timing-function: ease-in-out;
+    }
+    65% {
+        transform: rotateZ(20deg) rotateX(-60deg);
+        animation-timing-function: ease-in-out;
+    }
+    70% {
+        transform: rotateZ(-20deg) rotateX(-53deg);
+        animation-timing-function: ease-in-out;
+    }
+    75% {
+        transform: rotateZ(20deg) rotateX(58deg);
+        animation-timing-function: ease-in-out;
+    }
+    80% {
+        transform: rotateZ(20deg) rotateX(-65deg);
+        animation-timing-function: ease-in-out;
+    }
+    85% {
+        transform: rotateZ(20deg) rotateX(70deg);
+        animation-timing-function: ease-in-out;
+    }
+    90% {
+        transform: rotateZ(-20deg) rotateX(-30deg);
+        animation-timing-function: ease-in-out;
+    }
+    
+    100% {
+        transform: rotateZ(0deg) rotateX(58deg);
+        animation-timing-function: cubic-bezier(0.990, 0.000, 0.890, 0.435);
+    }
+}
+@keyframes fall { 
+    90% {
+        filter: drop-shadow(0px 60px 40px rgba(0,0,0,0));
+    }
+    100% {
+        margin-top: 3500px;
+        filter: drop-shadow(0px 5px 8px rgba(0,0,0,0.6));
+    }
+}
