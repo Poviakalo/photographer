@@ -48,12 +48,29 @@ a {
 	height: 40px;
 	transition: all .3s;
 }
-.social__item {
-	margin-right: 30px;	
-}
-.social__item .icon:hover  {	
-	transform: scale(1.1);
-	
+.social {
+	display: flex;
+	position: absolute;    
+    bottom: 50px;
+
+	&__item {
+		margin-right: 30px;	
+	}
+
+	&__item .icon:hover  {	
+		transform: scale(1.1);		
+	}
+	.mobile {
+		display: none;
+	}
+	@media (max-width: $mobile) {		
+		.mobile {
+			display: block;
+		}
+		.desktop {
+			display: none;
+		}
+	}
 }
 
 .title {

@@ -3,11 +3,21 @@
     overflow: hidden;
     perspective-origin: center;
     height: max-content;
-    // perspective: 1800px;
+    @media (max-width: $mobile) {         
+        & .row {
+            margin: -30px;
+        }        
+    }
+    &__title {
+        @media (max-width: $mobile) {
+            margin-left: 30px;
+        }
+    }
 
     &__item {
         margin-bottom: 30px;
-        &-wrap {
+
+        &--wrap {
             overflow: hidden;
             display: block;
         }
@@ -19,24 +29,37 @@
                 transform: scale(1.1);
             }          
         }
+        @media(max-width: $mobile) {
+            &--4, &--5,&--7, &--8, &--10 {
+                display: none;
+            }
+            margin-bottom: 15px;
+        }
     }
     .animation {
         position: absolute;
         z-index: 9;
         width: 28%;
+        height: inherit;
         transform-origin: 0px 0 0px;
         animation-name: fall, sway;
-        animation-duration: 25s, 25s;
+        animation-duration: 60s;
         animation-fill-mode: both;
-        animation-timing-function: linear, ease-in-out;
+        animation-timing-function: linear;
         animation-iteration-count: infinite;
     }
     .leaf-1 { top: -60px;}
-    .leaf-2 { top: -45px; left: 5%; animation-delay: 8s; transform: rotateX(58deg); }
-    .leaf-3 { width: 28%; top: -30px; left: 15%; animation-delay: 15s; }
-    .leaf-4 { width: 25%; top: -55px; left: 90%; animation-delay: 4.4s; }
-    .leaf-5 { width: 28%; top: -18px; left: 85%; animation-delay: 13s; }
-    .leaf-6 { width: 23%; top: 0px; left: 95%; animation-delay: 20s; }
+    .leaf-2 { top: -45px; left: 5%; animation-delay: 10s; transform: rotateX(58deg); }
+    .leaf-3 { width: 28%; top: -30px; left: 15%; animation-delay: 20s; }
+    .leaf-4 { width: 25%; top: -55px; left: 90%; animation-delay: 5s; }
+    .leaf-5 { width: 28%; top: -18px; left: 85%; animation-delay: 15s; }
+    .leaf-6 { width: 23%; top: -35px; left: 95%; animation-delay: 25s; }
+    .leaf-7 { top: -60px; animation-delay: 30s;}
+    .leaf-8 { top: -45px; left: 5%; animation-delay: 40s; transform: rotateX(58deg); }
+    .leaf-9 { width: 28%; top: -30px; left: 15%; animation-delay: 50s; }
+    .leaf-10 { width: 25%; top: -55px; left: 90%; animation-delay: 35s; }
+    .leaf-11 { width: 28%; top: -18px; left: 85%; animation-delay: 45s; }
+    .leaf-12 { width: 23%; top: -35px; left: 95%; animation-delay: 55s; }
 }
 @keyframes sway { 
     0% {
@@ -51,7 +74,7 @@
         animation-timing-function: ease-in-out;
     }
     15% {
-        transform: rotateZ(0deg) rotateX(-60deg);
+        transform: rotateZ(-60deg) rotateX(-80deg);
         animation-timing-function: ease-in-out;
     }
     20% {
@@ -116,18 +139,23 @@
         transform: rotateZ(-20deg) rotateX(-30deg);
         animation-timing-function: ease-in-out;
     }
+    95% {
+        transform: rotateZ(-70deg) rotateX(60deg);
+        animation-timing-function: ease-in-out;
+    }
     
     100% {
+        top: 100%;
         transform: rotateZ(0deg) rotateX(58deg);
         animation-timing-function: cubic-bezier(0.990, 0.000, 0.890, 0.435);
     }
 }
-@keyframes fall { 
-    90% {
-        filter: drop-shadow(0px 60px 40px rgba(0,0,0,0));
-    }
-    100% {
-        margin-top: 3500px;
-        filter: drop-shadow(0px 5px 8px rgba(0,0,0,0.6));
-    }
-}
+// @keyframes fall { 
+//     90% {
+//         filter: drop-shadow(0px 60px 40px rgba(0,0,0,0));
+//     }
+//     100% {
+//         margin-top: 3500px;
+//         filter: drop-shadow(0px 5px 8px rgba(0,0,0,0.6));
+//     }
+// }

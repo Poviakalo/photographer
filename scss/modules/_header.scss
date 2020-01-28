@@ -4,18 +4,38 @@
     &__link {
     color: var(--black);
 
-    &:hover {
-        color: var(--green);
+        &:hover {
+            color: var(--green);
+        }
     }
+
+    @media (max-width: $mobile) {
+        &__link {
+            color: #fff;
+        }
+        &__list {
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        &__item {
+            margin-bottom: 10px;
+        }
     }
 }
 .header{    
     position: relative;
     margin-bottom: 50px;
 
+    @media (max-width: $mobile) {
+        margin-bottom: 300px;
+    }
     &__title {
         color: var(--green);
         margin-bottom: 50px;
+
+        @media (max-width: $mobile) {            
+            margin-bottom: 70px;
+        }        
 
         &--span-first{
             font-size: 48px;
@@ -23,7 +43,7 @@
             font-weight: bold;
             position: relative;
 
-        &::after {
+            &::after {
                 content: '';
                 display: block;
                 width: 50px;
@@ -33,7 +53,14 @@
                 position: absolute;
                 top: 0;                
                 right: -50px;
-            } 
+            }
+            @media (max-width: $mobile) {
+                font-size: 36px;
+                line-height: 35px;
+            }
+            @media (min-width: $mobile) and (max-width: $desktop) {            
+                font-size: 30px;
+            }
         }   
         &--span-second {
             display: block;
@@ -41,26 +68,68 @@
             line-height: 28px;
             font-weight: 500;
             letter-spacing: 0.5em;
-            margin-top: 40px;           
+            margin-top: 40px;
+
+            @media (max-width: $mobile) {
+                font-size: 18px;
+                line-height: 19px;
+                letter-spacing: 0.45em;
+            }  
+            @media (min-width: $mobile) and (max-width: $desktop) {            
+                font-size: 16px;
+                margin-top: 10px;
+            }      
         }
     }
 
     &__text {
-        width: 80%;
-        margin-bottom: 30px;
+        text-align: center;
+        &--item{
+            width: 95%;
+            margin-bottom: 30px; 
+            @media (max-width: $mobile) {
+                text-align: justify;         
+            }
+            
+        }
+        
+        @media (max-width: $mobile) {
+            position: absolute;
+            bottom: -42%;      
+        }
+        @media (min-width: $mobile) and (max-width: $desktop) {            
+            font-size: 14px;
+            line-height: 16px;
+            text-align: start;
+        }
+
     }
     &__block {        
         height: 100vh;
+        position: relative;
+        
+        @media (max-width: $mobile) {
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
 
         &--img {
-            position: absolute;            
+            position: absolute;
+            height: 100vh;
+            top: 0;          
             right: 0;        
             background: url('../images/mainfoto.jpg') no-repeat right;
             background-size: cover;
         }
-    }    
+           
+    }
+  &__social {
+        z-index: 1;
+        @media (max-width: $mobile) {
+        top: 30px;
+        }
+    }      
 }
-.social {
-    position: absolute;    
-    bottom: 50px;
-}
+
