@@ -83,7 +83,7 @@
     }
 
     &__text {
-        text-align: center;
+        text-align: start;
         &--item{
             width: 95%;
             margin-bottom: 30px; 
@@ -99,8 +99,7 @@
         }
         @media (min-width: $mobile) and (max-width: $desktop) {            
             font-size: 14px;
-            line-height: 16px;
-            text-align: start;
+            line-height: 16px;            
         }
 
     }
